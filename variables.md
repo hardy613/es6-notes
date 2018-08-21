@@ -75,14 +75,14 @@ for loop the scope is redeclared at the start of each loop, where a new
 
 ```js 
 
-function myFunc(...args) {
-	for(let [index, el] of args.entries()) {
-		const message = `${el} found at index: ${index}`;
+function myFunc(items) {
+	for(let i = 0; i < items.length; i++) {
+		const message = items[i] + ' found at index: ' + i;
 		console.log(message);
 	} 
 }
 
-myFunc('test', 100, 200);
+myFunc(['test', 100, 200]);
 ```
 
 [Shadowing]: https://en.wikipedia.org/wiki/Variable_shadowing

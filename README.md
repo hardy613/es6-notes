@@ -1,14 +1,10 @@
 # ECMAScript 6 (ES6)
 
 ## Introduction
-Writing ES6 Javascript means understanding your environment, in most cases 
-you will use a `transpiler` like `Babel` to bundle your ES6 code as complient
-ES5 code for browsers. When working in a `NodeJs` environment you can use 
-[node.green](https://node.green) as a benchmark to know what ES6 tools are 
-available to you.
+
+_This is not meant to replace the official documentation_
 
 Below is an index of notes for ES6
-
 
 - [Variables][Variables]
 - [for/of][for-of]
