@@ -6,7 +6,7 @@
 
 ## Working with promises
 
-Promises are a convenient way to orgainize the order of operation for your 
+Promises are a convenient way to organize the order of operation for your 
 program and provide and alternative to passing callbacks as function parmeters.
 Say we have a function `callToDb` that makes a database call and returns a 
 promise
