@@ -1,7 +1,7 @@
 # ES6 Modules
 
 ES6 modules use the `import` and `export` keywords and is intended to be used
-with the broswer or with a server environment like `NodeJs`
+with the browser or with a server environment like `NodeJs`
 
 ```js
 // utils.js
