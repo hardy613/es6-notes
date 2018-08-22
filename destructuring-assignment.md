@@ -62,4 +62,26 @@ let [x = 5, y = 10] = [20];
 console.log(x, y) // 20, 10
 ```
 
+Spread operator works also in your function or method.
+
+```javascript
+function score(student, ...marks) {
+  let total = 0;
+  let count = marks.length;
+
+  // sum of all the marks
+  for( let mark of marks ) {
+    total += mark;
+  }
+
+  const average = Math.round(total / count);
+
+  return average;
+}
+
+console.log( score('John', 12, 15, 7, 9, 11, 6, 18) );
+
+// 11
+```
+
 [Spread Operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
