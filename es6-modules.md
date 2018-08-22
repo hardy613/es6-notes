@@ -1,6 +1,6 @@
 # ES6 Modules
 
-ES6 modules use the `import` and `export` keywords and is intended to be used
+ES6 modules use the `import` and `export` keywords and are intended to be used
 with the browser or with a server environment like `NodeJs`
 
 ```js
@@ -14,7 +14,7 @@ export function times(left = 0, right = 0) {
 }
 ```
 
-Now we can import our utils file, there are a few ways we can import.
+Now we can import our utils files. There are a few ways we can import.
 
 ```js
 // index.js
@@ -53,7 +53,7 @@ trim(' test '); // 'test'
 
 There are two different types of export, `named` and `default`. You can have 
 multiple `named` exports in a module but only one `default` export. The above 
-examples are all from the `named` export, lets take a look at the `default` 
+examples are all from the `named` export, let's take a look at the `default` 
 export syntax.
 
 ```js
@@ -73,7 +73,7 @@ let mySuperLongNamedVariable = 100;
 export default mySuperLongNamedVariable;
 ```
 
-When importing defaults you can name them without the ` * as ` keyword.
+When importing defaults, you can name them without the ` * as ` keyword.
 
 ```js
 // index.js

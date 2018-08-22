@@ -1,12 +1,12 @@
 # ES6 Classes
 
 ES6 `class` is new syntax for the traditional classes introduced in ES2015. 
-ES6 Classes are not introducing anything to javascript rather _just another way 
-to write a JavaScript class_. Class bodys are subject to JavaScripts
+ES6 Classes are not introducing anything to JavaScript rather _just another way 
+to write a JavaScript class_. Class bodys are subject to JavaScript's
 `strict mode`, the class body has new keywords and some words are 
 reserved as keywords for future use.
 
-Just like functions there are two ways to declare a class, `expression` or 
+As with functions, there are two ways to declare a class, `expression` or 
 `declaration`. 
 
 ```js
@@ -24,7 +24,7 @@ Unlike a function, a class must be declared or expressed before it can used.
 ## Constructors
 
 `constructor` is a reserved keyword for classes and represent a function that
-is called during a construtor initialization.
+is called during a constructor initialization.
 
 ```js
 class Instrument {
@@ -80,7 +80,7 @@ console.log(noiseMaker.type); // Drums
 
 ## Inheriting
 
-Classes can inherit a parent class. Keeping with Instruments, lets make a 
+Classes can inherit a parent class. Keeping with Instruments, let's make a 
 guitar class. The `super` keyword refers to the class being inherited.
 
 ```js
