@@ -12,7 +12,7 @@ let {name, age} = person;
 console.log(name, age); // Bill, 42
 ```
 
-Sometimes you want to keep all the other stuff, that is where the spread 
+Sometimes you want to keep all the other stuff. That is where the spread 
 operator [`...`][Spread Operator] comes in handy.
 
 ```js
@@ -35,7 +35,7 @@ console.log(obj); // { person: {[...]} }
 
 `obj` now has our `person` property with our person `Bill`. If the person 
 property was already set in `otherObj` then we would override that property. 
-Lets look at unpacking the length property from a string with destructuring.
+Let's look at unpacking the length property from a string with destructuring.
 
 
 ```js
@@ -46,13 +46,13 @@ console.log(arr.map(value => value.length)); // [6, 5, 5, 4]
 console.log(arr.map(({ length }) => length)); // [6, 5, 5, 4]
 ```
 
-Lets breakdown the line we just added. `console.log(arr.map(` is pretty 
-standard. `({ length })` the paramter for our arrow function, we are passing 
+Let's breakdown the line we just added. `console.log(arr.map(` is pretty 
+standard. `({ length })` is the parameter for our arrow function, we are passing 
 in a string and destructuring the length property from the string and passing 
 that as a variable called `length`. The function parameter is the string 
 length. `=> length));` the rest of our arrow function. The property is also 
 the variable identifier and we only return the `length`. If you need a default 
-with destructuring then you can do that too!
+with destructuring, you can do that too!
 
 ```js 
 let { name = 'Bill', age = 30 } = { name: 'Ted' };

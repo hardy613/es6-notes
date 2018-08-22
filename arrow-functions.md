@@ -1,6 +1,6 @@
 # ES6 Arrow Functions
 
-Arrow functions are a short hand syntax for functions that do not contain its 
+Arrow functions are a shorthand syntax for functions that do not contain its 
 own `this`, `arguments`, `super`, or `new.target` and cannot be used as 
 constructors.
 

@@ -7,7 +7,7 @@
 ## Working with promises
 
 Promises are a convenient way to organize the order of operation for your 
-program and provide and alternative to passing callbacks as function parmeters.
+program and provide and alternative to passing callbacks as function parameters.
 Say we have a function `callToDb` that makes a database call and returns a 
 promise
 
@@ -57,7 +57,7 @@ callToDb('table_name')
 	});
 ```
 
-Chains can be as long as you need them, `catch` can also be used multiple 
+Chains can be as long as you need them. `catch` can also be used multiple 
 times in a promise chain, the next `catch` in the chain is called on return 
 of an `Error` and following `then`s will still be called.
 
@@ -88,7 +88,7 @@ callToDb('table_name')
 ## Creating a promise
 
 The promise constructor should only be used to to wrap a function that does not 
-support a promise. Most libraries have built in support for promises which 
+support a promise. Most libraries have built-in support for promises which 
 enable you to start chaining `then` right out of the box without a promise 
 constructor.
 
@@ -122,7 +122,7 @@ this will trigger a `catch` or
 ## Reject
 
 Reject returns a promise that is rejected with a `reason`. To debug with ease 
-it is recommended to make the `reason` a `instance of Error`
+it is recommended to make the `reason` an `instance of Error`
 
 ```js
 Promise.reject(new Error('My custom message'))

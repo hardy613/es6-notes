@@ -2,8 +2,8 @@
 
 
 ## `var` vs `let`
-A variable in javascript is a named space in memory. Triditionally the keyword
-`var` initializes the `indentifier` with a `value`:
+A variable in javascript is a named space in memory. Traditionally the keyword
+`var` initializes the `identifier` with a `value`:
 
 ```js
 var	my_variable	=	'value';
@@ -13,10 +13,10 @@ var	my_variable	=	'value';
 //2 the identifier
 //3 the value
 ```
-There are rules for naming the variable identifier, they are:
+There are rules for naming the variable identifier. These are:
 - identifiers cannot be keywords
 - can be alphanumeric, although cannot start with a number
-- `$` and `_` are also allowed characters for an indentifier
+- `$` and `_` are also allowed characters for an identifier
 
 Variables decalred by `var` have the scope of the entire function.
 
@@ -31,7 +31,7 @@ function myFunc() {
 
 ## The `let` keyword
 
-`let` is preferred over `var`. Variables decalred by `let` have their scope
+`let` is preferred over `var`. Variables declared by `let` have their scope
 within the `block` they are defined.
 
 ```js
@@ -60,7 +60,7 @@ function myFunc() {
 
 ES6 also introduced a new variable keyword: `const`. Variables declared with 
 the `const` keyword are block scoped just like `let` however they cannot 
-change by reassignment and they cannot be redeclared, they are immutable.
+change by reassignment and they cannot be re-declared; they are immutable.
 
 ```js
 const version = '0.0.1';
@@ -69,7 +69,7 @@ version = '0.0.2'; // TypeError: invalid assignment to const
 const name = 'bill';
 const name = 'ted'; // SyntaxError: Identifier 'name' has already been declared
 ```
-Variables decalred by `const` (constants) cannot be changed, however; with a 
+Variables decalred by `const` (constants) cannot be changed. However, with a 
 for loop the scope is redeclared at the start of each loop, where a new 
 `const` can be initalized.
 
