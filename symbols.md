@@ -2,7 +2,7 @@
 
 The symbols descriptor is used to specify the specials symbols used in newer syntax of the ECMAScript standard. A symbol can be a string, image, or identifier.
 
-Some behavior linked to these symbols are already built-in the language, like the rest parameters :
+Some behavior linked to these symbols are already built-in the language, like the rest parameters:
 
 ```javascript
 const count = (...items) => items.length
