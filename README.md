@@ -15,6 +15,7 @@ Below is an index of notes for ES6
 - [Classes][Classes]
 - [ES6 modules][ES6 modules]
 - [Promises][Promises]
+- [Rest Parameters][Rest Parameters]
 
 [Variables]: ./variables.md
 [for-of]: ./for-of.md
@@ -25,3 +26,4 @@ Below is an index of notes for ES6
 [Classes]: ./classes.md
 [ES6 Modules]: ./es6-modules.md
 [Promises]: ./promises.md
+[Rest Parameters]: ./rest-parameters.md
