@@ -6,11 +6,11 @@ the back-tick. Template literals can also have `placeholders`,
 these are declared with a dollar sign and curly braces `${placeholder}`.
 ```js
 // es6
-let number = 42;
+const number = 42;
 let str = `Here's my favourite number: ${number}.`;
 console.log(str) // Here's my favourite number: 42.
 
-let count = 0;
+const count = 0;
 let displayCount = `${count + 1}`;
 console.log(displayCount); // 1 
 ```
@@ -21,8 +21,8 @@ argument is an array of string values, the rest of the arguments relate to
 the placeholders in the template literal.
 
 ```js
-let name = 'Theodor Logan';
-let age = 21;
+const name = 'Theodor Logan';
+const age = 21;
 
 function showNameAndAge(strings, nameHolder, ageHolder) {
 	// string[0] is empty as we started the template literal

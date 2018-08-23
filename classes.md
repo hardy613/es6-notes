@@ -12,11 +12,11 @@ As with functions, there are two ways to declare a class, `expression` or
 ```js
 // expression
 const Instrument = class {}; // or class Instrument {}
-let instrument = new Instrument();
+const instrument = new Instrument();
 
 // declaration
 class Instrument {}
-let instrument = new Instrument();
+const instrument = new Instrument();
 ```
 
 Unlike a function, a class must be declared or expressed before it can used.
@@ -38,7 +38,7 @@ class Instrument {
 	}
 }
 
-let noiseMaker = new Instrument({ make: 'Crafter', type: 'Guitar' });
+const noiseMaker = new Instrument({ make: 'Crafter', type: 'Guitar' });
 console.log(noiseMaker.type); // Guitar
 ```
 ## Getters and Setters
@@ -72,7 +72,7 @@ class Instrument {
 
 }
 
-let noiseMaker = new Instrument({ make: 'Crafter', type: 'Guitar' });
+const noiseMaker = new Instrument({ make: 'Crafter', type: 'Guitar' });
 noiseMaker.type = 'Drums';
 noiseMaker.make = 'Yamaha';
 console.log(noiseMaker.type); // Drums
@@ -94,7 +94,7 @@ class Guitar extends Instrument {
 	}
 }
 
-let myGuitar = new Guitar('Fender');
+const myGuitar = new Guitar('Fender');
 console.log(myGuitar.make); // The make of the guitar is: Fender
 myGuitar.make = 'Crafter';
 console.log(myGuitar.make); // The make of the guitar is: Crafter
@@ -120,7 +120,7 @@ class Guitar extends Instrument {
 	}
 }
 
-let fender = new Guitar('Fender');
+const fender = new Guitar('Fender');
 fender.log(); // The make of this guitar is: Fender, Guitar
 ```
 
@@ -144,7 +144,7 @@ class Guitar extends Instrument {
 	}
 }
 
-let fender = new Guitar('Fender');
+const fender = new Guitar('Fender');
 console.log(fender.toString()); // [Instrument Guitar]
 ```
 
@@ -173,6 +173,6 @@ class Guitar extends Instrument {
 	}
 }
 
-let guitar = new Guitar('Fender', 12);
+const guitar = new Guitar('Fender', 12);
 console.log(guitar.stringCount); // 12
 ```
