@@ -1,6 +1,6 @@
 # ES6 Rest parameters
 
-Functions can take a rest parameters that act as a placeholder for a non-finite number of arguments.
+Functions can take a rest parameter that act as a placeholder for a non-finite number of arguments.
 
 ```javascript
 function score(user, ...marks) {
