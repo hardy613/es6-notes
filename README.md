@@ -23,7 +23,7 @@ Below is an index of notes for ES6
 [Arrow Functions]: ./arrow-functions.md
 [Destructuring Assignment]: ./destructuring-assignment.md
 [Default Parameters]: ./default-parameters.md
+[Rest Parameters]: ./rest-parameters.md
 [Classes]: ./classes.md
 [ES6 Modules]: ./es6-modules.md
 [Promises]: ./promises.md
-[Rest Parameters]: ./rest-parameters.md
