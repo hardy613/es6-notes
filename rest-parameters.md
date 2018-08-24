@@ -17,25 +17,32 @@ Rest parameters give an array instance. `pop`, `push`, `join` and other array me
 function sentence(...words) {
   return words.join(" ");
 }
+
+console.log(sentence("You", "are", "awesome")); // "You are awesome"
+console.log(sentence(["You", "are", "awesome"])); // "You,are,awesome"
 ```
 
-The following code will work as expected:
+`for...of ` loops can also be used with a rest operator.
 
 ```javascript
-console.log(sentence("You", "are", "awesome"));
+function avg(...numbers) {
+  const count = numbers.length;
+  let total = 0;
+  
+  for(let number of numbers) {
+  	total += number;
+  }
+  
+  const average = Math.round(total / count);
+  
+  return average;
+}
 
-// "You are awesome"
+avg(1, 2, 3); // 2
+avg(1, 2, 3, 4, 5, 6); // 4
 ```
 
-While this code will convert the array into its string representation:
-
-```javascript
-console.log(sentence(["You", "are", "awesome"]));
-
-// "You,are,awesome"
-```
-
-Rest parameters build an array with the parameters **left**, so if you put a rest parameters in first argument followed by another one:
+The rest parameter is the remaining unnamed arguments from the function declaration and must be the last parameter.
 
 ```javascript
 function debug(...items, something_else) {
@@ -43,11 +50,5 @@ function debug(...items, something_else) {
   console.log(something_else);
 }
 
-debug(1, 2, 3, 'last');
-```
-
-This will produce the following error:
-
-```
-SyntaxError: Unexpected token, expected ) (1:23)
+debug(1, 2, 3, 'last'); // SyntaxError: Unexpected token, expected ) (1:23)
 ```
