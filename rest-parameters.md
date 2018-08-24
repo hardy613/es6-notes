@@ -3,23 +3,12 @@
 Functions can take a rest parameter that act as a placeholder for a non-finite number of arguments.
 
 ```javascript
-function score(user, ...marks) {
-  const marks_count = marks.length;
-  let total = 0;
-
-  // sum all the marks together
-  for (let mark of marks) {
-    total += mark;
-  }
-
-  const score = Math.round(total / marks_count);
-
-  return `John has a score of ${score}`;
+function logArgsLength(...args) {
+  console.log(args.length);
 }
 
-console.log(score("John", 12, 8, 8, 12, 15));
-
-// "John has a score of 11"
+logArgsLength(1, 2); // 2
+logArgsLength(1, 'a', 'b', 'c', 2, 3) // 6
 ```
 
 Rest parameters automatically build an array, so given this function:
