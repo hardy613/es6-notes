@@ -11,7 +11,7 @@ logArgsLength(1, 2); // 2
 logArgsLength(1, 'a', 'b', 'c', 2, 3) // 6
 ```
 
-Rest parameters automatically build an array, so given this function:
+Rest parameters give an array instance. `pop`, `push`, `join` and other array methods are available.
 
 ```javascript
 function sentence(...words) {
