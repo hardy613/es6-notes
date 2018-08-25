@@ -26,16 +26,13 @@ console.log(sentence(["You", "are", "awesome"])); // "You,are,awesome"
 
 ```javascript
 function avg(...numbers) {
-  const count = numbers.length;
   let total = 0;
   
   for(let number of numbers) {
   	total += number;
   }
-  
-  const average = Math.round(total / count);
-  
-  return average;
+
+  return Math.round(total / numbers.length);  
 }
 
 avg(1, 2, 3); // 2
@@ -50,5 +47,5 @@ function debug(...items, something_else) {
   console.log(something_else);
 }
 
-debug(1, 2, 3, 'last'); // SyntaxError: Unexpected token, expected ) (1:23)
+debug(1, 2, 3, 'last'); // SyntaxError: Unexpected token
 ```
