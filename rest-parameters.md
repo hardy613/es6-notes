@@ -50,5 +50,5 @@ function debug(...items, something_else) {
   console.log(something_else);
 }
 
-debug(1, 2, 3, 'last'); // SyntaxError: Unexpected token, expected ) (1:23)
+debug(1, 2, 3, 'last'); // SyntaxError: Unexpected token
 ```
