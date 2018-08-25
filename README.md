@@ -12,10 +12,10 @@ Below is an index of notes for ES6
 - [Arrow Functions][Arrow Functions]
 - [Destructuring Assignment][Destructuring Assignment]
 - [Default Parameters][Default Parameters]
+- [Rest Parameters][Rest Parameters]
 - [Classes][Classes]
 - [ES6 modules][ES6 modules]
 - [Promises][Promises]
-- [Rest Parameters][Rest Parameters]
 
 [Variables]: ./variables.md
 [for-of]: ./for-of.md
