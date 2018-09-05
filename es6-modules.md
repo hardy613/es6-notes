@@ -32,7 +32,7 @@ You can also export variables or objects.
 
 const myVariable = 100;
 
-let person = {
+const person = {
 	name: 'Bill',
 	age: 42
 };
@@ -69,7 +69,7 @@ You can also have a variable as a default export
 
 ```js 
 // other-module.js
-let mySuperLongNamedVariable = 100;
+const mySuperLongNamedVariable = 100;
 export default mySuperLongNamedVariable;
 ```
 

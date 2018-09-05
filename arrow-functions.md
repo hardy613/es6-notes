@@ -5,7 +5,7 @@ own `this`, `arguments`, `super`, or `new.target` and cannot be used as
 constructors.
 
 ```js
-let arr = ['hammer', 'nails', 'pizza', 'test'];
+const arr = ['hammer', 'nails', 'pizza', 'test'];
 console.log(arr.map(value => value.length)); // [6, 5, 5, 4]
 ```
 
@@ -25,7 +25,7 @@ es6LexicalScope();
 Arrow functions do not have a `prototype`.
 
 ```js
-let func = () => {};
+const func = () => {};
 console.log(func.prototype); // undefined
 ```
 
@@ -33,10 +33,10 @@ To return an object as an implicit return, you can wrap the object in
 the [`grouping operator`][Grouping Operator] (parentheses).
 
 ```js
-let returnObj = () => { test: 'value' };
+const returnObj = () => { test: 'value' };
 console.log(returnObj); // undefined
 
-let returnObj = () => ({test: 'value'});
+const returnObj = () => ({test: 'value'});
 console.log(returnObj); // { test: 'value' }
 ```
 
@@ -48,11 +48,11 @@ functions in the provided exmaples. The usage of `()`:
 - Arrow functions that only return, do not need `{}`, `return`, or `;`
 
 ```js
-let fn1 = () => {[Native Code]};
-let fn2 = param => {[Native Code]};
-let fn2a = (param) => {[Native Code]};
-let fn3 = (param1, param2) => {[Native Code]};
-let fn4 = param => param;
+const fn1 = () => {[Native Code]};
+const fn2 = param => {[Native Code]};
+const fn2a = (param) => {[Native Code]};
+const fn3 = (param1, param2) => {[Native Code]};
+const fn4 = param => param;
 ```
 
 [Grouping Operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping

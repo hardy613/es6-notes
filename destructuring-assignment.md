@@ -3,12 +3,12 @@
 Destructuring assignment lets you unpack values from an array or object.
 
 ```js
-let [x, y] = [1, 2, 3, 4, 5];
+const [x, y] = [1, 2, 3, 4, 5];
 console.log(x); // 1
 console.log(y); // 2;
 
 const person = { name: 'Bill', age: 42, email: 'bill@example.ca', url: 'http://example.ca' };
-let {name, age} = person;
+const {name, age} = person;
 console.log(name, age); // Bill, 42
 ```
 
@@ -16,11 +16,11 @@ Sometimes you want to keep all the other stuff. That is where the spread
 operator [`...`][Spread Operator] comes in handy.
 
 ```js
-let [x, y, ...allTheRest] = [1, 2, 3, 4, 5];
+const [x, y, ...allTheRest] = [1, 2, 3, 4, 5];
 console.log(x, y, allTheRest); // 1, 2, [3, 4, 5]
 
 const person = { name: 'Bill', age: 42, email: 'bill@example.ca', url: 'http://example.ca' };
-let {name, age, ...details} = person;
+const {name, age, ...details} = person;
 console.log(name, age, details); // Bill, 42, {email: 'bill@example.ca', url: 'http://example.ca'}
 ```
 
@@ -29,7 +29,7 @@ You can also destructure to build new variables!
 ```js
 const otherObj = {};
 const person = { name: 'Bill', age: 42, email: 'bill@example.ca', url: 'http://example.ca' };
-let obj = {...otherObj, person};
+const obj = {...otherObj, person};
 console.log(obj); // { person: {[...]} }
 ```
 
@@ -39,7 +39,7 @@ Let's look at unpacking the length property from a string with destructuring.
 
 
 ```js
-let arr = ['hammer', 'nails', 'pizza', 'test'];
+const arr = ['hammer', 'nails', 'pizza', 'test'];
 // without destructuring
 console.log(arr.map(value => value.length)); // [6, 5, 5, 4]
 // with destructuring
@@ -55,10 +55,10 @@ the variable identifier and we only return the `length`. If you need a default
 with destructuring, you can do that too!
 
 ```js 
-let { name = 'Bill', age = 30 } = { name: 'Ted' };
+const { name = 'Bill', age = 30 } = { name: 'Ted' };
 console.log(name, age)// Ted, 30
 
-let [x = 5, y = 10] = [20];
+const [x = 5, y = 10] = [20];
 console.log(x, y) // 20, 10
 ```
 
