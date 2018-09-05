@@ -1,5 +1,3 @@
 - [@shardy613](https://github.com/shardy613)
 - [@Khalyomede](https://github.com/khalyomede)
-  - rest-parameters.md
 - [@fernandoguedes](https://github.com/fernandoguedes)
-  - issue-7
