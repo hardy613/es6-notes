@@ -1,3 +1,6 @@
+October 2018
+- fixes some typos and added new example for variable defaults
+
 Sept 2018
 - updated code blocks examples
 
