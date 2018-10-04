@@ -18,7 +18,7 @@ There are rules for naming the variable identifier. These are:
 - can be alphanumeric, although cannot start with a number
 - `$` and `_` are also allowed characters for an identifier
 
-Variables decalred by `var` have the scope of the entire function.
+Variables declared by `var` have the scope of the entire function.
 
 ```js
 function myFunc() {
@@ -69,7 +69,7 @@ version = '0.0.2'; // TypeError: invalid assignment to const
 const name = 'bill';
 const name = 'ted'; // SyntaxError: Identifier 'name' has already been declared
 ```
-Variables decalred by `const` (constants) cannot be changed. However, with a 
+Variables declared by `const` (constants) cannot be changed. However, with a 
 for loop the scope is redeclared at the start of each loop, where a new 
 `const` can be initalized.
 

@@ -59,7 +59,7 @@ callToDb('table_name')
 
 Chains can be as long as you need them. `catch` can also be used multiple 
 times in a promise chain, the next `catch` in the chain is called on return 
-of an `Error` and following `then`s will still be called.
+of an `Error` and following `then` blocks will still be called.
 
 ```js
 
