@@ -46,7 +46,8 @@ returned. `then` returns a promise meaning we can now create a promise `chain`.
 callToDb('table_name')
 	.then(response => {
 		// do something with response
-		let res = response.changesMade = true;
+		let res = response;
+		res.changesMade = true;
 		return res;
 	})
 	.then(response => {
@@ -66,7 +67,8 @@ of an `Error` and following `then` blocks will still be called.
 callToDb('table_name')
 	.then(response => {
 		// do something with response
-		let res = response.changesMade = true;
+		let res = responsei;
+		res.changesMade = true;
 		return res;
 	})
 	.then(response => {
