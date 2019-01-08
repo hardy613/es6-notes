@@ -67,7 +67,7 @@ of an `Error` and following `then` blocks will still be called.
 callToDb('table_name')
 	.then(response => {
 		// do something with response
-		let res = responsei;
+		let res = response;
 		res.changesMade = true;
 		return res;
 	})
