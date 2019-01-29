@@ -12,7 +12,7 @@ happen in that order, however The stack must be cleared for the evenloop to
 push callbacks from the on the queue to the stack. NodeJs or browsers act as 
 the WebAPI. 
 
-## breaking down `callbacks`
+## Starting with `callbacks`
 
 A lot of developers starting with asynchronous code are familiar 
 with `callbacks`. A `callback` function pushed is onto the callback queue once
@@ -55,6 +55,7 @@ In this example what is the order of the `console.log`'s ?
 
 <details>
 <summary>Answer</summary>
+
 - `end script`
 - `logs completed`
 
@@ -74,15 +75,15 @@ const fs = require('fs')
 const content = 'Logging to a file'
 try {
 	fs.writeFileSync('test.txt', content)
+	console.log('logs completed')
 } catch (err) {
 	throw err
 }
-console.log('logs completed')
 console.log('end script')
 ```
 </details>
 
-## Starting with  Synchronous Operations
+## Synchronous Operations
 
 ```js
 const arr = [1, 2, 3, 4, 5, 6]
@@ -106,4 +107,4 @@ While the `forEach` happens over the array other operations are blocked until
 the `forEach` completes. The same goes for the operations inside the `forEach`, 
 one must complete before the next instruction can happen.
 
-## Asynchronous 
+## Asynchronous Operations
