@@ -15,6 +15,7 @@ Below is an index of notes for ES6
 - [Rest Parameters][Rest Parameters]
 - [Classes][Classes]
 - [ES6 modules][ES6 modules]
+- [Asynchronous versus Synchronous][Asynchronous versus Synchronous]
 - [Promises][Promises]
 
 [Variables]: ./variables.md
@@ -26,4 +27,5 @@ Below is an index of notes for ES6
 [Rest Parameters]: ./rest-parameters.md
 [Classes]: ./classes.md
 [ES6 Modules]: ./es6-modules.md
+[Asynchronous versus Synchronous]: ./async-vs-sync.md
 [Promises]: ./promises.md

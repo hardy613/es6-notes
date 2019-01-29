@@ -1,3 +1,6 @@
+January 2019
+- added async vs sync 
+
 October 2018
 - fixes some typos and added new example for variable defaults
 
