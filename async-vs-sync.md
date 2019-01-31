@@ -1,41 +1,59 @@
 # Asynchronous vs Synchronous Programming
 
+> Time is an illusion. Lunchtime doubly so.
+- Douglas Adams, The Hitchhiker's Guide to the Galaxy
+
 ## Introduction
 
 In programming synchronous operations block instructions until the task is 
 completed while asynchronous operations can execute without blocking other 
 operations. Asynchronous operations generally complete by firing an event or by 
-calling a provided `callback` function.
+calling a provided `callback` function, sometimes refered to as a `future` or 
+`promise`.
 
-Javascript has the callstack, webAPI, event loop and callback queue. Operations 
-happen in that order, however The stack must be cleared for the evenloop to 
-push callbacks from the on the queue to the stack. NodeJs or browsers act as 
-the WebAPI. 
+## Breaking Down JavaScript
 
-## Starting with `callbacks`
+Javascript has:
+- A Callstack
+- WebAPI
+- Event Loop
+- Callback Queue
 
-A lot of developers starting with asynchronous code are familiar 
-with `callbacks`. A `callback` function pushed is onto the callback queue once
-the webAPI has completed it's task. When the stack clears the event loop pushes 
-the callback function onto the stack.
-
-Using `setTimeout` you can mock asynchronous behaviour. In a modern 
-browser try:
+The Callstack is the imediate work you program will do. 
 
 ```js
-const time = window.setTimeout(() => {
-	console.log('one')
-}, 0)
-console.log('two');
+let i = 0 // declare a mutable variable
+i += 1 // add one to the variable
+console.log(i) // log the variable
 ```
-The results are: 
+In the above example declaring a variable, adding one to the variable and 
+log the variable are all three separate instructions that get added to the 
+stack.
 
-- `two`
-- `one`
+WebApi's are methods available from environments where JavaScript is run. In 
+browsers the `window` and it's methods are apart of the WebAPI. When the WebAPI 
+completes it puts the callback on the event loop. The Event Loop waits for the 
+stack to complete the loaded work. Once the Event Loop notices the stack is 
+clear it will add any work to the stack from the Callback Queue.
 
-This is becuase `setTimeout` pushes the `callback` onto the callback queue after 
-the set amount of time, in this case `0`. Once `two` is logged the event loop 
-pushes the callback onto the stack can `one` is logged.
+Consider `window.setTimeout` with a timer of `0` with a callback function that 
+uses a variable before it is declared.
+
+```js
+window.setTimeout(() => console.log(i), 0)
+let i = 0 
+i += 1
+```
+
+Instead of an error, we get the correct answer `1`, this is because the function 
+that `console.log`'s is a parameter to the first WebAPI instruction 
+`window.setTimeout`. The callback funtion is moved to the callback queue. Once 
+the stack clears declaring the variable and adding one to the variable our 
+function is called and it is safe to use the variable.
+
+## Starting with `callbacks`
+L
+
 
 A `NodeJs` example:
 
@@ -50,7 +68,6 @@ fs.writeFile('test.txt', content, (err) => {
 })
 console.log('end script')
 ```
-
 In this example what is the order of the `console.log`'s ?
 
 <details>
@@ -68,7 +85,7 @@ The callback is called once the `writeFile` API has completed:
 `fs.writeFile` is asynchronous so `console.log('end script')` is called before 
 the work `writeFile` has to do. Doing this action synchronouly sould require a 
 try catch and the synchronous version of `writeFile` - `writeFileSync`. If `err` 
-is set it would be thrown and the `console.log`'s would not be called.
+is set it would be thrown causing `console.log` not be called.
 
 ```js
 const fs = require('fs')
@@ -79,32 +96,21 @@ try {
 } catch (err) {
 	throw err
 }
-console.log('end script')
 ```
 </details>
 
 ## Synchronous Operations
 
+
+
+
 ```js
-const arr = [1, 2, 3, 4, 5, 6]
-arr.forEach(value => {
-	const element = document.createElement('li')
-	element.textContent = `https://example.com/page/${value}`
-	const ul = document.querySelector('#page-list')
-	ul.appendChild(element)
-	const link = document.createElement('a')
-	link.href = element.textContent
-	element.appendChild(link)
-	element.addEventListener('click', () => {
-		console.log(`clicked ${element.textContent}`) // don't track me bro
-	})
-})
-console.log('all done')
+Array
+	.from({ length: 5000 }, (v, i) => i + 1)
+	.forEach(value => console.log(value))
 ```
-In the above example operations are executed one after another. `all done` will 
-only be logged once all the `li` and `a` tags have been added to the document. 
-While the `forEach` happens over the array other operations are blocked until 
-the `forEach` completes. The same goes for the operations inside the `forEach`, 
-one must complete before the next instruction can happen.
+
 
 ## Asynchronous Operations
+
+
