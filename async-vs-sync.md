@@ -134,7 +134,7 @@ database('table')
 While the database load and responds to the request the rest of the page or 
 other resources can load.
 
-### Promises and Asynchornous code 
+### Promises and Asynchronous Operations 
 
 Promises are another way to interact with asynchronous code. In the above example
 if the `const` database returned a Promise then we could write:
@@ -166,5 +166,3 @@ database('table')
 	})
 	.catch(err => throw err)
 ```
-
-
