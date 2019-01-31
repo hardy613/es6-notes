@@ -48,8 +48,8 @@ i += 1
 
 Instead of an error, we get the correct answer `1`, this is because of the function 
 that uses `console.log` is a parameter to the first WebAPI instruction 
-`window.setTimeout`. The callback function is moved to the callback queue when 
-the timer completes. Once the stack clears declaring and adding one 
+`window.setTimeout`. The callback function is moved to the Callback Queue when 
+the timer completes. Once the Callstack clears declaring and adding one 
 to the variable, our function is called and it is safe to use the variable.
 
 ## Starting with `callbacks`
