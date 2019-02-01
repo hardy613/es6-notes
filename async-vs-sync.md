@@ -35,7 +35,7 @@ let i = 0
 i += 1
 ```
 
-Instead of an error, we get the correct answer 1, this is because of the function that uses console.log is a parameter to the first WebAPI instruction window.setTimeout. The callback function is moved to the Callback Queue when the timer completes. Once the Callstack clears declaring and adding one to the variable, our function is called and it is safe to use the variable.
+Instead of an error, we get the correct answer `1`, this is because of the function that uses `console.log` is a parameter to the first WebAPI instruction `window.setTimeout`. The callback function is moved to the Callback Queue when the timer completes. Once the Callstack clears declaring and adding one to the variable, our function is called and it is safe to use the variable.
 
 ## Starting with callbacks
 
@@ -64,7 +64,22 @@ What changes are needed to do this action synchronously?
 
 <details>
 <summary>Answer</summary>
-Synchronous Operations
+```js
+const fs = require('fs')
+const content = 'Logging to a file'
+try {
+	fs.writeFileSync('test.txt', content)
+	console.log('logs completed')
+} catch (err) {
+	throw err
+}
+```
+
+If `err` is thrown the `console.log` is not called.
+</details>
+
+## Synchronous Operations
+
 Synchronous Operations that run block the next operation until it completes. Blocking operations may not always seem like an issue because computers are fast. For example: creating an array and logging the values in an array.
 
 ```js
@@ -72,9 +87,6 @@ Array
 	.from({ length: 5 }, (v, i) => i + 1)
 	.forEach(value => console.log(value))
 ```
-
-</details>
-
 However if the length was 5000 it would take longer before the array was logged. The difference in timing is a result of the thread being locked for a longer time.
 Making synchronous calls to resources can lead to long response times locking up the UI until the resource responds. As an example:
 
