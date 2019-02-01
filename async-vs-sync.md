@@ -5,7 +5,7 @@
 
 ## Introduction
 
-In programming, synchronous operations block instructions until the task is completed, while asynchronous operations can execute without blocking other operations. Asynchronous operations are generally complete by firing an event or by calling a provided callback function.
+In programming, synchronous operations block instructions until the task is completed, while asynchronous operations can execute without blocking other operations. Asynchronous operations are generally completed by firing an event or by calling a provided callback function.
 
 ## Breaking Down JavaScript
 
