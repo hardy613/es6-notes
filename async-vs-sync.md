@@ -64,6 +64,7 @@ What changes are needed to do this action synchronously?
 
 <details>
 <summary>Answer</summary>
+
 ```js
 const fs = require('fs')
 const content = 'Logging to a file'
