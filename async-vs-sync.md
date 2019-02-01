@@ -45,7 +45,6 @@ window.setTimeout(() => console.log(i), 0)
 let i = 0 
 i += 1
 ```
-
 Instead of an error, we get the correct answer `1`, this is because of the function 
 that uses `console.log` is a parameter to the first WebAPI instruction 
 `window.setTimeout`. The callback function is moved to the Callback Queue when 
@@ -55,21 +54,20 @@ to the variable, our function is called and it is safe to use the variable.
 ## Starting with `callbacks`
 
 A callback executes once it is added to the Callstack. In the previous example 
-this relied on a timer so complete, however other API's will have other 
+this relied on a timer to complete, however other API's will have other 
 condiditons. A `NodeJs` example:
 
 ```js
 const fs = require('fs')
 const content = 'Logging to a file'
-fs.writeFile('test.txt', content, (err) => {
-	if(err) {
+fs.writeFile('test.txt', content, err => {
+	if (err) {
 		throw err
 	}
 	console.log('logs completed')
 })
 console.log('end script')
 ```
-
 The callback is called once the `writeFile` API has completed:
 
 - opening or creating the file
@@ -114,12 +112,30 @@ However if the length was 5000 it would take longer before the array was logged.
 The difference in timing is a result of the thread being locked for a longer 
 time.
 
+Making synchronous calls to resources can lead to long response times locking 
+up the UI until the resource responds. As an example: 
+
+```js
+const request = new XMLHttpRequest()
+request.open('GET', 'https://httpstat.us', false)
+request.send(null)
+
+if (request.status === 200) {
+  console.log(request.responseText)
+}
+```
+Making requests to your own services like a database can have the same effect. 
+A common webpage will have many requests to make under unique circomstances, as 
+a developer you'll want those requests to start as soon as posible but still 
+allow the rest of the page to load what it can with out the requests.
+
+This is when asynchronous operations become powerfull.
+
 ## Asynchronous Operations
 
 Asynchronous Operations happen independantly from the main program flow. A 
 common use for aynchronous code is querying a database and using the 
-result. Passing a callback to provide a way to interact with the response or 
-error.
+result. Passing in a callback is method to interact with the response or error.
 
 ```js
 const database = require('thecoolestnewestdbframework')
@@ -133,8 +149,8 @@ database('table')
 	})
 ```
 
-While the database load and responds to the request the rest of the page or 
-other resources can load.
+While the database loads and responds to the request the rest of the page or 
+other resources cannot load.
 
 ### Promises and Asynchronous Operations 
 
