@@ -37,7 +37,7 @@ function showNameAndAge(strings, nameHolder, ageHolder) {
 	} else {
 		ageNotice = 'What an oldtimer. ';
 	}
-	return = `${ageNotice}${nameHolder}${piece1}${ageHolder}${piece2}`;
+	return `${ageNotice}${nameHolder}${piece1}${ageHolder}${piece2}`;
 }
 
 showNameAndAge`${name} is ${age} years of age.` // What a babyface. Theodor Loagn is 21 years of age.
